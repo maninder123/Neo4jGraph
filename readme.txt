@@ -16,15 +16,29 @@ ________________________________________________Neo4j Installation on Windows___
 6. Neo4j interactive GUI opens at: http://localhost:7474/browser (works fastest on chrome)
  _________________________________________________________________________________________________________________________
  
+ _____________________________________________Adding the required data to database________________________________________
  
+ 1. Run neo4j server and open localhost:7474 / your url in the browser.
  
+ 2. there are two files(person.csv and rel.csv) present in the js/resources directory.
  
+ 3. Load these csv file to neo4j server using the follwing queries
  
- 
- 
- 
- 
- 
+
+        Note: ====>if the location of csv file is different use the appropriate path
+                
+        person.csv :
+                                
+                LOAD CSV WITH HEADERS FROM "http://localhost/forceDirectedGraph/convertcsv.csv" AS csvLine
+                CREATE (p:Person { group: toInt(csvLine.group), name: csvLine.name });
+                
+                
+        rel.csv :
+                                
+                LOAD CSV WITH HEADERS FROM "http://localhost/forceDirectedGraph/convertcsv.csv" AS csvLine
+                CREATE (p:Person { source: toInt(csvLine.source), target: toInt(csvLine.target), value: toInt(csvLine.value) });
+_________________________________________________________________________________________________________________________ 
+
  
  /************************************************************************************************************************
  *                                                 Project Setup                                                         *
