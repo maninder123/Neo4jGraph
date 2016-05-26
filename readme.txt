@@ -49,7 +49,7 @@ ________________________________________________________________________________
                         
                          type command: git clone https://github.com/maninder123/Neo4jGraph.git
                           
- 3. Navigate to the project directory the navigate to js/src/config.js. This files contains config details.
+ 3. Navigate to the project directory the navigate to js/src/config.js. This file contains config details.
  
  4. Supply the necessary details :
         1.PORT -> port on which neo4j is listening (default: 7474)
