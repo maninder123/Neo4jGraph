@@ -8,6 +8,12 @@ var links = getData({
 
 $(document).ready(function () {
     var chartData = sanatizeData(node, links);
+    
     drawChart(chartData, "error");
+    
+    $(window).resize(function(){
+        $('svg').remove();
+        drawChart(chartData, "error");
+    })
 
 });

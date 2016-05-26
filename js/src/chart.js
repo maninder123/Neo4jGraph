@@ -2,14 +2,15 @@ function drawChart(graph) {
     if (graph) {
         console.info("DrawGraph(): Charting Started.");
 
-        var width = 960,
-            height = 500;
-
+        var width = $(window).width()/1.2,
+            height = width/2;
+            console.log("SVG Width: ",width);
+            console.log("SVG Height: ",height);
         var color = d3.scale.category20();
 
         var force = d3.layout.force()
             .charge(-120)
-            .linkDistance(30)
+            .linkDistance(60)
             .size([width, height]);
 
         var svg = d3.select("body").append("svg")
