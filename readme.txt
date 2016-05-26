@@ -1,4 +1,4 @@
-________________________________________________Neo4j Installation on Windows_____________________________________________
+_________________________ Neo4j Installation on Windows__________________________ 
 1. download neo4j executable from http://neo4j.com/download/other-releases/ , choose appropriate file.
 
 2. run the executable on windows and follow the instruction.
@@ -14,9 +14,9 @@ ________________________________________________Neo4j Installation on Windows___
                             Password: neo4j
 
 6. Neo4j interactive GUI opens at: http://localhost:7474/browser (works fastest on chrome)
- _________________________________________________________________________________________________________________________
+ __________________________________________________________________________________
  
- _____________________________________________Adding the required data to database________________________________________
+ _________________________ Adding the required data to database____________________
  
  1. Run neo4j server and open localhost:7474 / your url in the browser.
  
@@ -37,12 +37,12 @@ ________________________________________________Neo4j Installation on Windows___
                                 
                 LOAD CSV WITH HEADERS FROM "http://localhost/forceDirectedGraph/convertcsv.csv" AS csvLine
                 CREATE (p:Person { source: toInt(csvLine.source), target: toInt(csvLine.target), value: toInt(csvLine.value) });
-_________________________________________________________________________________________________________________________ 
+______________________________________________________________________________________
 
  
- /************************************************************************************************************************
- *                                                 Project Setup                                                         *
- ************************************************************************************************************************/
+ /***********************************************************************************
+ *                                 Project Setup                                    *                   
+ ************************************************************************************
  1. Open Git Bash/git Cmd/Bash
  
  2. clone the project from https://github.com/maninder123/Neo4jGraph.git 
@@ -58,11 +58,11 @@ ________________________________________________________________________________
         4.password->not required
         4.credentials->explained in the next point
         
-5. Generating the base64 
-        1. go to google chrome console and type :btoa('<your-userneo4j-name>:<your-userneo4j-name>');
+5. Generating the base64 credentials 
+        1. go to google chrome console and type :btoa('<your-neo4j-username>:<your-neo4j-password>');
                      example :btoa('neo4j:root')
                      
         2. it will return a sting copy and paste it as credentials value.
         
- 6. Once everything is setup like any other project(example: localhost/forceDirectedGraph)
- _________________________________________________________________________________________________________________________
+ 6. Once everything is setup, run the project like any other project(example: localhost/forceDirectedGraph)
+ __________________________________________________________________________________________
